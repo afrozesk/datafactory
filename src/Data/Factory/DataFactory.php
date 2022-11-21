@@ -38,7 +38,10 @@ class DataFactory
     }
 
     /**
+     * Get stock.
+     *
      * @param int $id
+     *
      * @return DataInterface
      */
     public function getStock(int $id): DataInterface
