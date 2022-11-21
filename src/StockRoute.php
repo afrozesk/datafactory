@@ -2,6 +2,8 @@
 
 namespace DataFactory;
 
+use DataFactory\Data\DataInterface;
+use DataFactory\Data\Factory\DataFactory;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
@@ -10,13 +12,28 @@ use Slim\Http\Response;
  */
 class StockRoute
 {
+    /**
+     * Data factory.
+     *
+     * @var DataFactory
+     */
+    private $dataFactory;
 
-    public function __construct()
+    /**
+     * Constructor.
+     *
+     * @param DataFactory $dataFactory
+     */
+    public function __construct(DataFactory $dataFactory)
     {
+        $this->dataFactory = $dataFactory;
     }
 
-    public function getStock(Request $request, int $id): Response
+    public function getStock(Response $response, int $id): Response
     {
+        /** @var DataInterface $stock */
+        $stock = $this->dataFactory->getStock($id);
 
+        return $response->withJson($stock)->withStatus(200);
     }
 }

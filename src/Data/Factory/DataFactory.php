@@ -1,5 +1,7 @@
 <?php declare(strict_types=1);
 
+namespace DataFactory\Data\Factory;
+
 use DataFactory\Data\DataInterface;
 use DataFactory\Data\DB\Repository\StockRepository as StockDBRepository;
 use DataFactory\Data\Redis\Repository\StockRepository as StockRedisRepository;
