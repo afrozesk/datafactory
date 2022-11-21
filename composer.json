@@ -1,0 +1,14 @@
+{
+  "name": "moneycontrol/datafactory",
+  "version": "1.0.0",
+  "type": "project",
+  "description": "Example to describe data layers while keeping top layer ambitious of bottom layer logic",
+  "require": {
+    "slim/http": "^0.4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "DataFactory\\": "src/"
+    }
+  }
+}
