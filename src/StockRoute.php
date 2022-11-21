@@ -29,6 +29,14 @@ class StockRoute
         $this->dataFactory = $dataFactory;
     }
 
+    /**
+     * Get stock information.
+     *
+     * @param Response $response
+     * @param int $id
+     *
+     * @return Response
+     */
     public function getStock(Response $response, int $id): Response
     {
         /** @var DataInterface $stock */
